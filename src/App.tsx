@@ -108,7 +108,7 @@ const App: React.FC = () => {
     const deltaY = event.clientY - lastMousePosRef.current.y;
 
     const newMatrix = mat4.clone(modelViewMatrixRef.current);
-    mat4.rotate(newMatrix, newMatrix, deltaX * 0.01, [0, 1, 0]);
+    mat4.rotate(newMatrix, newMatrix, -deltaX * 0.01, [0, 1, 0]);
     mat4.rotate(newMatrix, newMatrix, -deltaY * 0.01, [1, 0, 0]);
 
     modelViewMatrixRef.current = newMatrix;
